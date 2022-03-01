@@ -10,6 +10,17 @@
 </head>
 <body>
     
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{{  route('comics.index') }}">List of Comics</a>
+                {{-- <a class="nav-item nav-link active" href="{{  route('comics.create') }}">Create new comic</a> --}}
+              </div>
+            </div>
+          </nav>
+    </header>
+
     <main>
         @yield('main_content')
     </main>
