@@ -7,6 +7,8 @@
         <div class="card-body">
           <h5 class="card-title">{{$comic->title}}</h5>
           <div class="card-text">{{$comic->description}}</div>
+          <div>Tipo fumetto: {{$comic->type}}</div>
+          <div>Prezzo: €{{$comic->price}}</div>
         </div>
     </div>
 @endsection
