@@ -50,6 +50,7 @@ class ComicController extends Controller
             'series'=>'required|max:30',
             'sale_date'=>'required|max:10',
             'thumb'=>'required|max:255',
+            'description'=>'min:10|max:60000|nullable'
         ]);
 
         $new_comic = new Comic();
@@ -90,7 +91,10 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        
+
+        return view('comics.edit',compact('comic'));
     }
 
     /**
@@ -102,7 +106,12 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = $request->all();
+
+        $comic_update = Comic::findOrFail($id);
+        $comic_update->update($form_data);
+
+        return redirect()->route('comics.show', ['comic'=>$comic_update->id]);
     }
 
     /**
